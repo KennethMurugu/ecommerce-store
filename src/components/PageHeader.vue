@@ -1,8 +1,8 @@
 <template>
-  <div class="page-header py-6">
-    <div class="app-name-container">
-      <p class="app-name my-0">Shopio</p>
-      <fa-icon icon="bars" class="mx-3"></fa-icon>
+  <div class="page-header py-6 mb-6">
+    <div class="app-name-container mr-3">
+      <p class="app-name my-0 mr-6">Shopio</p>
+      <fa-icon icon="bars" class="fa-lg"></fa-icon>
     </div>
     <div class="search-container mx-3 px-6">
       <input
@@ -13,7 +13,7 @@
       <fa-icon icon="search" class="mx-3"></fa-icon>
     </div>
 
-    <div class="action-btns">
+    <div class="action-btns ml-3">
       <p class="my-0 mr-4">Download App</p>
       <p class="my-0 ml-4">Sign in</p>
     </div>
@@ -22,8 +22,8 @@
 
 <script>
 export default {
-  name: "PageHeader"
-};
+  name: 'PageHeader'
+}
 </script>
 
 <style lang="scss" scoped>
