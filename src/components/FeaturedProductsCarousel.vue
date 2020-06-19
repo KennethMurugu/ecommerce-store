@@ -25,11 +25,11 @@
       </div>
 
       <span @click="prev" class="carousel-btn prev">
-        <fa-icon icon="arrow-alt-circle-left" class="fa-3x icon"></fa-icon>
+        <fa-icon icon="caret-square-left" class="fa-3x icon"></fa-icon>
       </span>
 
       <span @click="next" class="carousel-btn next">
-        <fa-icon icon="arrow-alt-circle-right" class="fa-3x icon"></fa-icon>
+        <fa-icon icon="caret-square-right" class="fa-3x icon"></fa-icon>
       </span>
     </div>
   </div>
@@ -190,7 +190,7 @@ export default {
 }
 
 .product-container:not(.current) {
-  opacity: 0.5;
+  filter: grayscale(85%);
   .product-info {
     visibility: hidden;
   }
