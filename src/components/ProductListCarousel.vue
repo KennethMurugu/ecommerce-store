@@ -74,11 +74,18 @@ export default {
       type: Array,
       default: () => []
     },
-    title: String
+    title: String,
+    numtoshow: {
+      type: Number,
+      default: 5
+    }
   },
   computed: {
     productsSlice() {
-      return this.products.slice(this.currentIndex, this.currentIndex + 5)
+      return this.products.slice(
+        this.currentIndex,
+        this.currentIndex + this.numtoshow
+      )
     }
   },
   data() {
@@ -88,7 +95,7 @@ export default {
   },
   methods: {
     next() {
-      if (this.currentIndex + 5 >= this.products.length) return
+      if (this.currentIndex + this.numtoshow >= this.products.length) return
       this.currentIndex++
     },
     prev() {
@@ -126,7 +133,7 @@ export default {
   column-gap: 1rem;
 }
 .product {
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.215);
   border-radius: 10px;
   //   width: 300px;

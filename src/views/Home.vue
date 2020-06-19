@@ -8,17 +8,22 @@
       :products="featuredProducts"
       title="Featured Products"
     />
+
+    <DealsOfTheDay />
   </div>
 </template>
 
 <script>
 import FeaturedProductsCarousel from '../components/FeaturedProductsCarousel'
 import ProductListCarousel from '../components/ProductListCarousel'
+import DealsOfTheDay from '../components/DealsOfTheDay'
+
 export default {
   name: 'Home',
   components: {
     FeaturedProductsCarousel,
-    ProductListCarousel
+    ProductListCarousel,
+    DealsOfTheDay
   },
   data() {
     return {
