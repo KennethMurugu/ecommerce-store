@@ -5,7 +5,7 @@
         class="product-container pa-12"
         v-for="(product, index) in featuredProducts"
         :key="index"
-        :style="`background-image: url(${product1Img})`"
+        :style="`background-image: url(${productImages[index]})`"
         :class="{
           current: index == 0,
           next: index == 1,
@@ -14,7 +14,7 @@
           prev: index == 4
         }"
       >
-        <div class="product-info pa-6">
+        <div class="product-info pa-6 ml-12">
           <h1 class="title">{{ product.title }}</h1>
           <p class="description">{{ product.description }}</p>
 
@@ -24,12 +24,12 @@
         </div>
       </div>
 
-      <span @click="prev" class="carousel-btn prev ml-12">
-        <fa-icon icon="arrow-circle-left" class="fa-3x"></fa-icon>
+      <span @click="prev" class="carousel-btn prev">
+        <fa-icon icon="arrow-alt-circle-left" class="fa-3x icon"></fa-icon>
       </span>
 
-      <span @click="next" class="carousel-btn next mr-12">
-        <fa-icon icon="arrow-circle-right" class="fa-3x"></fa-icon>
+      <span @click="next" class="carousel-btn next">
+        <fa-icon icon="arrow-alt-circle-right" class="fa-3x icon"></fa-icon>
       </span>
     </div>
   </div>
@@ -37,11 +37,21 @@
 
 <script>
 import product1Img from '../assets/img/product-1.jpg'
+import product2Img from '../assets/img/product-2.jpg'
+import product3Img from '../assets/img/product-3.jpg'
+import product4Img from '../assets/img/product-4.jpg'
+import product5Img from '../assets/img/product-5.jpg'
 export default {
   name: 'FeaturedProductsCarousel',
   data() {
     return {
-      product1Img,
+      productImages: [
+        product1Img,
+        product2Img,
+        product3Img,
+        product4Img,
+        product5Img
+      ],
       featuredProducts: [
         {
           title: 'Some Product 1',
@@ -126,6 +136,7 @@ export default {
 
 <style lang="scss" scoped>
 .carousel {
+  position: relative;
   height: 500px;
   display: flex;
   align-items: center;
@@ -189,10 +200,17 @@ export default {
   color: #fff;
   z-index: 999;
   cursor: pointer;
-  //   position: absolute;
+  position: absolute;
+  .icon {
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.35));
+  }
 
-  .prev {
-    left: 0%;
+  &.prev {
+    left: 12%;
+    top: 50%;
+  }
+  &.next {
+    right: 12%;
     top: 50%;
   }
 }

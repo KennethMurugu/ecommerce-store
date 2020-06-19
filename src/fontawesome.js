@@ -6,15 +6,23 @@ import {
   faBars,
   faSearch,
   faShoppingCart,
-  faArrowCircleLeft,
-  faArrowCircleRight
+  faCaretLeft,
+  faCaretRight,
+  faCaretSquareLeft,
+  faCaretSquareRight,
+  faArrowAltCircleRight,
+  faArrowAltCircleLeft
 } from '@fortawesome/free-solid-svg-icons'
 library.add({
   faBars,
   faSearch,
   faShoppingCart,
-  faArrowCircleLeft,
-  faArrowCircleRight
+  faCaretLeft,
+  faCaretRight,
+  faCaretSquareLeft,
+  faCaretSquareRight,
+  faArrowAltCircleRight,
+  faArrowAltCircleLeft
 })
 
 Vue.component('fa-icon', FontAwesomeIcon)
