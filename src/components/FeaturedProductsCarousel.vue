@@ -36,11 +36,11 @@
 </template>
 
 <script>
-import product1Img from '../assets/img/product-1.jpg'
-import product2Img from '../assets/img/product-2.jpg'
-import product3Img from '../assets/img/product-3.jpg'
-import product4Img from '../assets/img/product-4.jpg'
-import product5Img from '../assets/img/product-5.jpg'
+import product1Img from '../assets/img/main-product-1.png'
+import product2Img from '../assets/img/main-product-2.png'
+import product3Img from '../assets/img/main-product-3.png'
+import product4Img from '../assets/img/main-product-4.png'
+import product5Img from '../assets/img/main-product-5.png'
 export default {
   name: 'FeaturedProductsCarousel',
   data() {
@@ -54,27 +54,27 @@ export default {
       ],
       featuredProducts: [
         {
-          title: 'Some Product 1',
+          title: 'Surface Studio 2  ',
           description:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. '
         },
         {
-          title: 'Some Product 2',
+          title: 'iMac Pro',
           description:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. '
         },
         {
-          title: 'Some Product 3',
+          title: 'Logitech Mouse',
           description:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. '
         },
         {
-          title: 'Some Product 4',
+          title: 'Alienware',
           description:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. '
         },
         {
-          title: 'Some Product 5',
+          title: 'Corsair Dominator Platinum RBG',
           description:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. '
         }

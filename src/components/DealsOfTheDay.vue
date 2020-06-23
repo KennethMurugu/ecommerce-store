@@ -74,7 +74,9 @@ export default {
 <style lang="scss" scoped>
 .deals-of-the-day {
   height: 400px;
-  background: linear-gradient(to bottom right, rgb(1, 8, 116), rgb(3, 5, 24));
+  background-image: url('../assets/img/bg-deals-of-the-day.png');
+  background-size: cover;
+  background-position: center;
   color: #fff;
   display: grid;
   grid-template-columns: 300px auto;
