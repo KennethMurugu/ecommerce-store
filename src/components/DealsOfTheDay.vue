@@ -91,7 +91,7 @@ export default {
 .product {
   background-color: #fff;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.215);
-  border-radius: 10px;
+  border-radius: 5px;
   overflow: hidden;
   color: #444444;
 

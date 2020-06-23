@@ -1,7 +1,7 @@
 <template>
   <div class="page-header py-6">
     <div class="app-name-container mr-3">
-      <p class="app-name my-0 mr-6">Shopio</p>
+      <h1 class="app-name my-0 mr-6">Shopio</h1>
       <fa-icon icon="bars" class="fa-lg"></fa-icon>
     </div>
     <div class="search-container mx-3 px-6">
@@ -43,7 +43,7 @@ export default {
 
 .app-name-container {
   .app-name {
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: bold;
   }
 }
