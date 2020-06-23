@@ -13,7 +13,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Raleway', sans-serif;
-  background-color: rgb(235, 235, 235);
+  background-color: rgb(241, 241, 241);
   color: rgb(68, 68, 68);
   overflow-x: hidden;
 }
@@ -23,6 +23,8 @@ body {
   padding: 0.75rem 1.25rem;
   transition: all 0.2s ease;
   cursor: pointer;
+  border-radius: 0px;
+  font-family: inherit;
 
   &.light {
     background-color: #fff;

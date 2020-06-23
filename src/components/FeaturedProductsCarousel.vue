@@ -137,7 +137,7 @@ export default {
 <style lang="scss" scoped>
 .carousel {
   position: relative;
-  height: 500px;
+  height: 600px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -147,7 +147,7 @@ export default {
   width: 80%;
   //   max-width: 1000px;
   position: absolute;
-  height: 450px;
+  height: 550px;
   background-position: center;
   background-size: cover;
   border-radius: 5px;
@@ -159,20 +159,20 @@ export default {
   transition: all 1s ease;
 
   &.prev2 {
-    transform: translateX(-180%) scale(0.75);
+    transform: translateX(-254%);
   }
   &.prev {
-    transform: translateX(-140%) scale(0.75);
+    transform: translateX(-152%);
   }
   &.current {
     transform: translateX(-50%);
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.397);
   }
   &.next {
-    transform: translateX(40%) scale(0.75);
+    transform: translateX(52%);
   }
   &.next2 {
-    transform: translateX(80%) scale(0.75);
+    transform: translateX(154%);
   }
 
   &.prev2,

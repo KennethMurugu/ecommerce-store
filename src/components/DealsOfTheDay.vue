@@ -1,5 +1,5 @@
 <template>
-  <div class="deals-of-the-day mb-6">
+  <div class="deals-of-the-day">
     <div class="title pa-3 pl-12">
       <h1>Deals of the Day</h1>
     </div>

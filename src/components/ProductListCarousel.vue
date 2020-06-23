@@ -1,7 +1,7 @@
 <template>
-  <div class="product-list-carousel mx-auto my-6">
+  <div class="product-list-carousel mx-auto">
     <div class="header">
-      <h1 class="title">{{ title }}</h1>
+      <h2 class="title">{{ title }}</h2>
       <div class="action-btns">
         <span @click="prev" class="carousel-btn prev mr-3">
           <fa-icon icon="caret-square-left" class="icon"></fa-icon>
@@ -135,7 +135,7 @@ export default {
 .product {
   background-color: rgb(255, 255, 255);
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.215);
-  border-radius: 10px;
+  border-radius: 5px;
   //   width: 300px;
   overflow: hidden;
 

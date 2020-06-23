@@ -1,15 +1,22 @@
 <template>
   <div class="home">
-    <FeaturedProductsCarousel />
+    <FeaturedProductsCarousel class="mb-12" />
 
-    <ProductListCarousel :products="popularProducts" title="Popular Products" />
+    <DealsOfTheDay class="mb-12" />
+
+    <ProductListCarousel
+      :products="popularProducts"
+      title="Popular Products"
+      class="mb-12"
+    />
 
     <ProductListCarousel
       :products="featuredProducts"
       title="Featured Products"
+      class="mb-12"
     />
 
-    <DealsOfTheDay />
+    <PageFooter />
   </div>
 </template>
 
@@ -17,13 +24,15 @@
 import FeaturedProductsCarousel from '../components/FeaturedProductsCarousel'
 import ProductListCarousel from '../components/ProductListCarousel'
 import DealsOfTheDay from '../components/DealsOfTheDay'
+import PageFooter from '../components/PageFooter'
 
 export default {
   name: 'Home',
   components: {
     FeaturedProductsCarousel,
     ProductListCarousel,
-    DealsOfTheDay
+    DealsOfTheDay,
+    PageFooter
   },
   data() {
     return {

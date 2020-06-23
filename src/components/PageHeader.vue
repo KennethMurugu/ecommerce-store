@@ -1,5 +1,5 @@
 <template>
-  <div class="page-header py-6 mb-6">
+  <div class="page-header py-6">
     <div class="app-name-container mr-3">
       <p class="app-name my-0 mr-6">Shopio</p>
       <fa-icon icon="bars" class="fa-lg"></fa-icon>
