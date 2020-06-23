@@ -13,16 +13,8 @@
       </div>
     </div>
     <transition-group tag="div" class="product-list" name="product-list">
-      <div
-        class="product"
-        v-for="(product, index) in productsSlice"
-        :key="index + 1"
-      >
-        <img
-          :src="require('@/assets/img/comp-product.jpeg')"
-          :alt="product.name"
-          class="image"
-        />
+      <!-- <div class="product" v-for="(product, index) in productsSlice" :key="index + 1">
+        <img :src="product.url" :alt="product.name" class="image pa-2" />
         <div class="info pa-2">
           <p class="name">{{ product.name }}</p>
           <p class="description">{{ product.description }}</p>
@@ -39,36 +31,22 @@
           </div>
           <div class="price">{{ product.price }}</div>
         </div>
-      </div>
+      </div>-->
+      <ProductCard
+        v-for="(product, index) in productsSlice"
+        :key="index + 1"
+        :product="product"
+      />
     </transition-group>
-
-    <!-- <div class="product-list">
-      <div class="product" v-for="(product, index) in productsSlice" :key="index">
-        <img :src="require('@/assets/img/comp-product.jpeg')" :alt="product.name" class="image" />
-        <div class="info pa-2">
-          <p class="name">{{ product.name }}</p>
-          <p class="description">{{ product.description }}</p>
-        </div>
-        <div class="footer pt-3 px-3 pb-6">
-          <div class="ratings">
-            <fa-icon
-              icon="star"
-              v-for="(star, index) in 5"
-              :key="index"
-              class="star"
-              :class="{active: index  < product.rating}"
-            ></fa-icon>
-          </div>
-          <div class="price">{{ product.price }}</div>
-        </div>
-      </div>
-    </div>-->
   </div>
 </template>
 
 <script>
+import ProductCard from '../components/ProductCard'
+
 export default {
   name: 'ProductListCarousel',
+  components: { ProductCard },
   props: {
     products: {
       type: Array,

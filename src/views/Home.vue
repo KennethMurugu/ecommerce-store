@@ -41,49 +41,57 @@ export default {
           name: 'Apple Macbook Pro 1',
           description: 'Some awesome description',
           rating: 4,
-          price: 'KES200,000'
+          price: 'KES200,000',
+          url: 'img/hp-14in.jpg'
         },
         {
           name: 'Apple Macbook Pro 2',
           description: 'Some awesome description',
           rating: 4,
-          price: 'KES200,000'
+          price: 'KES200,000',
+          url: 'img/hp-14in.jpg'
         },
         {
           name: 'Apple Macbook Pro 3',
           description: 'Some awesome description',
           rating: 3,
-          price: 'KES200,000'
+          price: 'KES200,000',
+          url: 'img/hp-14in.jpg'
         },
         {
           name: 'Apple Macbook Pro 4',
           description: 'Some awesome description',
           rating: 4,
-          price: 'KES100,000'
+          price: 'KES100,000',
+          url: 'img/hp-14in.jpg'
         },
         {
           name: 'Apple Macbook Pro 5',
           description: 'Some awesome description',
           rating: 5,
-          price: 'KES80,000'
+          price: 'KES80,000',
+          url: 'img/hp-14in.jpg'
         },
         {
           name: 'Apple Macbook Pro 6',
           description: 'Some awesome description',
           rating: 3,
-          price: 'KES5,000'
+          price: 'KES5,000',
+          url: 'img/hp-14in.jpg'
         },
         {
           name: 'Apple Macbook Pro 7',
           description: 'Some awesome description',
           rating: 4,
-          price: 'KES250,000'
+          price: 'KES250,000',
+          url: 'img/hp-14in.jpg'
         },
         {
           name: 'Apple Macbook Pro 8',
           description: 'Some awesome description',
           rating: 4,
-          price: 'KES120,000'
+          price: 'KES120,000',
+          url: 'img/hp-14in.jpg'
         }
       ],
       featuredProducts: [
@@ -91,49 +99,57 @@ export default {
           name: 'Apple Macbook Pro 1',
           description: 'Some awesome description',
           rating: 4,
-          price: 'KES200,000'
+          price: 'KES200,000',
+          url: 'img/hp-14in.jpg'
         },
         {
           name: 'Apple Macbook Pro 2',
           description: 'Some awesome description',
           rating: 4,
-          price: 'KES200,000'
+          price: 'KES200,000',
+          url: 'img/hp-14in.jpg'
         },
         {
           name: 'Apple Macbook Pro 3',
           description: 'Some awesome description',
           rating: 3,
-          price: 'KES200,000'
+          price: 'KES200,000',
+          url: 'img/hp-14in.jpg'
         },
         {
           name: 'Apple Macbook Pro 4',
           description: 'Some awesome description',
           rating: 4,
-          price: 'KES100,000'
+          price: 'KES100,000',
+          url: 'img/hp-14in.jpg'
         },
         {
           name: 'Apple Macbook Pro 5',
           description: 'Some awesome description',
           rating: 5,
-          price: 'KES80,000'
+          price: 'KES80,000',
+          url: 'img/hp-14in.jpg'
         },
         {
           name: 'Apple Macbook Pro 6',
           description: 'Some awesome description',
           rating: 3,
-          price: 'KES5,000'
+          price: 'KES5,000',
+          url: 'img/hp-14in.jpg'
         },
         {
           name: 'Apple Macbook Pro 7',
           description: 'Some awesome description',
           rating: 4,
-          price: 'KES250,000'
+          price: 'KES250,000',
+          url: 'img/hp-14in.jpg'
         },
         {
           name: 'Apple Macbook Pro 8',
           description: 'Some awesome description',
           rating: 4,
-          price: 'KES120,000'
+          price: 'KES120,000',
+          url: 'img/hp-14in.jpg'
         }
       ]
     }
