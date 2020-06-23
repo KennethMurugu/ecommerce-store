@@ -1,18 +1,18 @@
 <template>
   <div class="home">
-    <FeaturedProductsCarousel class="mb-12" />
+    <MainProductsCarousel class="mb-12" />
 
     <DealsOfTheDay class="mb-12" />
 
     <ProductListCarousel
-      :products="popularProducts"
-      title="Popular Products"
+      :products="featuredProducts"
+      title="Featured Products"
       class="mb-12"
     />
 
     <ProductListCarousel
-      :products="featuredProducts"
-      title="Featured Products"
+      :products="popularProducts"
+      title="Popular Products"
       class="mb-12"
     />
 
@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import FeaturedProductsCarousel from '../components/FeaturedProductsCarousel'
+import MainProductsCarousel from '../components/MainProductsCarousel'
 import ProductListCarousel from '../components/ProductListCarousel'
 import DealsOfTheDay from '../components/DealsOfTheDay'
 import PageFooter from '../components/PageFooter'
@@ -29,7 +29,7 @@ import PageFooter from '../components/PageFooter'
 export default {
   name: 'Home',
   components: {
-    FeaturedProductsCarousel,
+    MainProductsCarousel,
     ProductListCarousel,
     DealsOfTheDay,
     PageFooter

@@ -42,7 +42,7 @@ import product3Img from '../assets/img/main-product-3.png'
 import product4Img from '../assets/img/main-product-4.png'
 import product5Img from '../assets/img/main-product-5.png'
 export default {
-  name: 'FeaturedProductsCarousel',
+  name: 'MainProductsCarousel',
   data() {
     return {
       productImages: [

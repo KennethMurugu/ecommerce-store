@@ -1,11 +1,11 @@
 <template>
   <div class="product">
     <img :src="product.url" :alt="product.name" class="image pa-2" />
-    <div class="info pa-2">
+    <div class="info py-2 px-6">
       <p class="name">{{ product.name }}</p>
       <p class="description">{{ shortDescription(product.description) }}</p>
     </div>
-    <div class="footer pt-3 px-3 pb-6">
+    <div class="footer pt-3 px-6 pb-6">
       <div class="ratings">
         <fa-icon
           icon="star"
