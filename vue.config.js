@@ -1,4 +1,5 @@
 module.exports = {
+  publicPath: '.',
   lintOnSave: false,
   chainWebpack: config => {
     config.plugin('html').tap(args => {
