@@ -14,8 +14,8 @@
     </div>
 
     <div class="action-btns ml-3">
-      <p class="my-0 mr-4">Download App</p>
-      <p class="my-0 ml-4">Sign in</p>
+      <p class="my-0 mr-4 btn light flat">Download App</p>
+      <p class="my-0 ml-4 btn light flat">Sign in</p>
     </div>
   </div>
 </template>
@@ -52,7 +52,14 @@ export default {
   max-width: 500px;
   width: 100%;
   background-color: #fff;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+  border-radius: 3px;
+
+  &:hover {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+  }
+
   .search-input {
     background-color: transparent;
     border: none;

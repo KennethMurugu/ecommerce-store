@@ -201,8 +201,15 @@ export default {
   z-index: 999;
   cursor: pointer;
   position: absolute;
+
   .icon {
     filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.35));
+    color: #fff;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: rgb(34, 34, 34);
+    }
   }
 
   &.prev {

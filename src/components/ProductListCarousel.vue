@@ -4,34 +4,15 @@
       <h2 class="title">{{ title }}</h2>
       <div class="action-btns">
         <span @click="prev" class="carousel-btn prev mr-3">
-          <fa-icon icon="caret-square-left" class="icon"></fa-icon>
+          <fa-icon icon="caret-square-left" class="icon fa-lg"></fa-icon>
         </span>
 
         <span @click="next" class="carousel-btn next">
-          <fa-icon icon="caret-square-right" class="icon"></fa-icon>
+          <fa-icon icon="caret-square-right" class="icon fa-lg"></fa-icon>
         </span>
       </div>
     </div>
     <transition-group tag="div" class="product-list" name="product-list">
-      <!-- <div class="product" v-for="(product, index) in productsSlice" :key="index + 1">
-        <img :src="product.url" :alt="product.name" class="image pa-2" />
-        <div class="info pa-2">
-          <p class="name">{{ product.name }}</p>
-          <p class="description">{{ product.description }}</p>
-        </div>
-        <div class="footer pt-3 px-3 pb-6">
-          <div class="ratings">
-            <fa-icon
-              icon="star"
-              v-for="(star, index) in 5"
-              :key="index"
-              class="star"
-              :class="{ active: index < product.rating }"
-            ></fa-icon>
-          </div>
-          <div class="price">{{ product.price }}</div>
-        </div>
-      </div>-->
       <ProductCard
         v-for="(product, index) in productsSlice"
         :key="index + 1"
@@ -95,11 +76,15 @@ export default {
 
     .action-btns {
       font-size: 1.5rem;
-      color: #fff;
-
-      .icon {
+      color: lighten($color-secondary, 10%);
+      .carousel-btn .icon {
         cursor: pointer;
-        filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.11));
+        filter: drop-shadow(0px 3px 2px rgba(0, 0, 0, 0.11));
+        transition: all 0.2s ease;
+
+        &:hover {
+          color: $color-primary;
+        }
       }
     }
   }

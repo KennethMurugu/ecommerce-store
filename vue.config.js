@@ -5,5 +5,12 @@ module.exports = {
       args[0].title = 'Shopio Ecommerce'
       return args
     })
+  },
+  css: {
+    loaderOptions: {
+      scss: {
+        prependData: `@import "@/assets/styles/_vars.scss";`
+      }
+    }
   }
 }

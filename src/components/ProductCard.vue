@@ -41,13 +41,20 @@ export default {
 <style lang="scss" scoped>
 .product {
   background-color: #fff;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.215);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.215);
   border-radius: 5px;
   overflow: hidden;
   color: #444444;
   display: grid;
   grid-template-rows: 200px 100px auto;
   align-items: flex-start;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+
+  &:hover {
+    // border-color: #ffdb1142;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.35);
+  }
 
   .image {
     width: 100%;
