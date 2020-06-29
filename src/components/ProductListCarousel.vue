@@ -110,46 +110,6 @@ export default {
   grid-template-columns: repeat(5, 1fr);
   column-gap: 1rem;
 }
-.product {
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.215);
-  border-radius: 5px;
-  //   width: 300px;
-  overflow: hidden;
-
-  .image {
-    width: 100%;
-  }
-
-  .info {
-    text-align: center;
-    .name {
-      font-weight: bold;
-    }
-
-    .description {
-      font-size: 0.9em;
-      color: rgb(77, 77, 77);
-    }
-  }
-
-  .footer {
-    display: grid;
-    align-items: center;
-    grid-template-columns: 1fr 1fr;
-
-    .ratings .star {
-      font-size: 0.7em;
-      &.active {
-        color: gold;
-      }
-    }
-
-    .price {
-      text-align: right;
-    }
-  }
-}
 
 .product-list-move {
   transition: transform 1s;

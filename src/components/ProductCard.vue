@@ -47,10 +47,12 @@ export default {
   color: #444444;
   display: grid;
   grid-template-rows: 200px 100px auto;
-  align-items: center;
+  align-items: flex-start;
 
   .image {
     width: 100%;
+    max-height: 200px;
+    align-self: center;
   }
 
   .info {
@@ -68,7 +70,7 @@ export default {
 
   .footer {
     display: grid;
-    align-items: center;
+    // align-items: center;
     grid-template-columns: 1fr 1fr;
 
     .ratings .star {
