@@ -1,8 +1,8 @@
 <template>
-  <div class="product-list-carousel mx-auto">
-    <div class="header">
+  <div class="product-list-carousel mx-auto px-3">
+    <div class="header" v-if="title">
       <h2 class="title">{{ title }}</h2>
-      <div class="action-btns">
+      <div class="action-btns" v-if="scrollable">
         <span @click="prev" class="carousel-btn prev mr-3">
           <fa-icon icon="caret-square-left" class="icon fa-lg"></fa-icon>
         </span>
@@ -12,13 +12,24 @@
         </span>
       </div>
     </div>
-    <transition-group tag="div" class="product-list" name="product-list">
+    <!-- <transition-group
+      tag="div"
+      class="product-list"
+      name="product-list"
+      :style="`grid-template-columns: repeat(${numtoshow}, 1fr);`"
+    >
+      <ProductCard v-for="(product, index) in productsSlice" :key="index + 1" :product="product" />
+    </transition-group>-->
+    <div
+      class="product-list"
+      :style="`grid-template-columns: repeat(${numtoshow}, 1fr);`"
+    >
       <ProductCard
         v-for="(product, index) in productsSlice"
         :key="index + 1"
         :product="product"
       />
-    </transition-group>
+    </div>
   </div>
 </template>
 
@@ -33,11 +44,11 @@ export default {
       type: Array,
       default: () => []
     },
-    title: String,
-    numtoshow: {
-      type: Number,
-      default: 5
-    }
+    scrollable: {
+      type: Boolean,
+      default: true
+    },
+    title: String
   },
   computed: {
     productsSlice() {
@@ -45,11 +56,24 @@ export default {
         this.currentIndex,
         this.currentIndex + this.numtoshow
       )
+    },
+    pageWidth() {
+      return this.$store.state.pageWidth
+    }
+  },
+  watch: {
+    pageWidth(newWidth) {
+      if (newWidth >= 1000) this.numtoshow = 5
+      else if (newWidth > 800) this.numtoshow = 4
+      else if (newWidth > 600) this.numtoshow = 3
+      else if (newWidth > 350) this.numtoshow = 2
+      else this.numtoshow = 1
     }
   },
   data() {
     return {
-      currentIndex: 0
+      currentIndex: 0,
+      numtoshow: 5
     }
   },
   methods: {

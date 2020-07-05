@@ -1,24 +1,21 @@
 <template>
-  <div class="deals-of-the-day">
-    <div class="title pa-3 pl-12">
-      <h1>Deals of the Day</h1>
+  <div class="deals-of-the-day pa-3">
+    <div class="title">
+      <h1>
+        <fa-icon class="mr-3" icon="star"></fa-icon>Deals of the Day
+        <fa-icon class="ml-3" icon="star"></fa-icon>
+      </h1>
     </div>
-    <div class="product-list px-6">
-      <ProductCard
-        v-for="(product, index) in dealProducts"
-        :key="index"
-        :product="product"
-      />
-    </div>
+    <ProductListCarousel :products="dealProducts" :scrollable="false" />
   </div>
 </template>
 
 <script>
-import ProductCard from '../components/ProductCard'
+import ProductListCarousel from '../components/ProductListCarousel'
 
 export default {
   name: 'DealsOfTheDay',
-  components: { ProductCard },
+  components: { ProductListCarousel },
   data() {
     return {
       dealProducts: [
@@ -62,14 +59,15 @@ export default {
 
 <style lang="scss" scoped>
 .deals-of-the-day {
-  height: 400px;
+  height: 450px;
   background-image: url('../assets/img/bg-deals-of-the-day.png');
   background-size: cover;
   background-position: center;
   color: #fff;
   display: grid;
-  grid-template-columns: 300px auto;
+  grid-template-columns: 200px auto;
   align-items: center;
+  column-gap: 1rem;
 }
 
 .product-list {
@@ -77,45 +75,14 @@ export default {
   grid-template-columns: repeat(4, 1fr);
   column-gap: 1rem;
 }
-// .product {
-//   background-color: #fff;
-//   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.215);
-//   border-radius: 5px;
-//   overflow: hidden;
-//   color: #444444;
 
-//   .image {
-//     width: 100%;
-//   }
-
-//   .info {
-//     text-align: center;
-
-//     .name {
-//       font-weight: bold;
-//     }
-
-//     .description {
-//       font-size: 0.9em;
-//       color: rgb(77, 77, 77);
-//     }
-//   }
-
-//   .footer {
-//     display: grid;
-//     align-items: center;
-//     grid-template-columns: 1fr 1fr;
-
-//     .ratings .star {
-//       font-size: 0.7em;
-//       &.active {
-//         color: gold;
-//       }
-//     }
-
-//     .price {
-//       text-align: right;
-//     }
-//   }
-// }
+@media screen and (max-width: 500px) {
+  .deals-of-the-day {
+    grid-template-columns: auto;
+    height: 550px;
+  }
+  .title {
+    text-align: center;
+  }
+}
 </style>

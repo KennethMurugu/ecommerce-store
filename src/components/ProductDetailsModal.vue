@@ -58,6 +58,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 9999;
 }
 
 .modal-body {
@@ -72,6 +73,7 @@ export default {
   grid-template-columns: 300px auto;
   column-gap: 2rem;
   animation: modalBodyEnter 0.75s ease forwards;
+  overflow-y: auto;
 }
 
 .product-image-container {

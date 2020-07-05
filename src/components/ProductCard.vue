@@ -1,11 +1,15 @@
 <template>
   <div class="product" @click="openProductDetailsModal">
-    <img :src="product.url" :alt="product.name" class="image pa-2" />
-    <div class="info py-2 px-6">
-      <p class="name">{{ product.name }}</p>
-      <p class="description">{{ shortDescription(product.description) }}</p>
+    <div class="product-img-container">
+      <img :src="product.url" :alt="product.name" class="image pa-2" />
     </div>
-    <div class="footer pt-3 px-6 pb-6">
+    <div class="info py-2 px-6">
+      <p class="name mt-0">{{ product.name }}</p>
+      <p class="description mt-0">
+        {{ shortDescription(product.description) }}
+      </p>
+    </div>
+    <div class="footer px-3 py-6">
       <div class="ratings">
         <fa-icon
           icon="star"
@@ -52,7 +56,7 @@ export default {
   overflow: hidden;
   color: #444444;
   display: grid;
-  grid-template-rows: 200px 100px auto;
+  grid-template-rows: 200px 120px auto;
   align-items: flex-start;
   border: 2px solid transparent;
   transition: all 0.2s ease;
@@ -63,10 +67,19 @@ export default {
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.35);
   }
 
-  .image {
+  // .image {
+  //   width: 100%;
+  //   max-height: 200px;
+  //   align-self: center;
+  // }
+  .product-img-container {
+    text-align: center;
     width: 100%;
-    max-height: 200px;
     align-self: center;
+    .image {
+      width: 100%;
+      max-height: 200px;
+    }
   }
 
   .info {
@@ -96,6 +109,17 @@ export default {
 
     .price {
       text-align: right;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .product .footer {
+    grid-template-columns: 1fr;
+
+    .ratings,
+    .price {
+      text-align: center;
     }
   }
 }

@@ -1,8 +1,8 @@
 <template>
   <div class="page-header py-6">
     <div class="app-name-container mr-3">
-      <h1 class="app-name my-0 mr-6">Shopio</h1>
-      <fa-icon icon="bars" class="fa-lg"></fa-icon>
+      <fa-icon icon="bars" class="fa-lg mr-6 side-nav-toggle"></fa-icon>
+      <h1 class="app-name my-0">Shopio</h1>
     </div>
     <div class="search-container mx-3 px-6">
       <input
@@ -13,7 +13,16 @@
       <fa-icon icon="search" class="mx-3"></fa-icon>
     </div>
 
+    <div class="search-container-small">
+      <fa-icon icon="search" class="mx-3"></fa-icon>
+    </div>
+
     <div class="action-btns ml-3">
+      <p class="my-0 mr-4 btn light flat">Download App</p>
+      <p class="my-0 ml-4 btn light flat">Sign in</p>
+    </div>
+
+    <div class="action-btns-dropdown">
       <p class="my-0 mr-4 btn light flat">Download App</p>
       <p class="my-0 ml-4 btn light flat">Sign in</p>
     </div>
@@ -31,6 +40,7 @@ export default {
 .app-name-container,
 .action-btns,
 .search-container {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -38,7 +48,8 @@ export default {
 }
 
 .page-header {
-  margin: 0 5rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
 }
 
 .app-name-container {
@@ -71,6 +82,30 @@ export default {
       border: none;
       outline: none;
     }
+  }
+}
+
+.side-nav-toggle,
+.search-container-small,
+.action-btns-dropdown {
+  display: none;
+}
+
+@media screen and (max-width: 1100px) {
+  .page-header {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .search-container,
+  .action-btns {
+    display: none;
+  }
+  .search-container-small,
+  .side-nav-toggle {
+    display: block;
   }
 }
 </style>

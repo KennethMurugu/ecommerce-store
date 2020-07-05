@@ -14,7 +14,7 @@
           prev: index == 4
         }"
       >
-        <div class="product-info pa-6 ml-12">
+        <div class="product-info pa-6">
           <h1 class="title">{{ product.title }}</h1>
           <p class="description">{{ product.description }}</p>
 
@@ -187,12 +187,14 @@ export default {
   background-color: rgba(107, 107, 107, 0.199);
   backdrop-filter: blur(10px);
   max-width: 300px;
+  margin-left: 2rem;
 }
 
 .product-container:not(.current) {
   filter: grayscale(85%);
   .product-info {
-    visibility: hidden;
+    // visibility: hidden;
+    display: none;
   }
 }
 
@@ -236,6 +238,20 @@ export default {
   }
   to {
     transform: translateX(-155%);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .carousel {
+    height: 400px;
+  }
+  .product-container {
+    height: 350px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .product-info {
+    margin: 0 1rem;
   }
 }
 </style>

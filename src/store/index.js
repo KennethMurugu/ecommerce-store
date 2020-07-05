@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    pageWidth: 99999,
     productDetailsModal: {
       product: {}
     },

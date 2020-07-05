@@ -72,4 +72,10 @@ export default {
     width: 100%;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .footer {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
