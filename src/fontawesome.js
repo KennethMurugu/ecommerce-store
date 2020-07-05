@@ -12,7 +12,8 @@ import {
   faCaretSquareRight,
   faArrowAltCircleRight,
   faArrowAltCircleLeft,
-  faStar
+  faStar,
+  faTimes
 } from '@fortawesome/free-solid-svg-icons'
 library.add({
   faBars,
@@ -24,7 +25,8 @@ library.add({
   faCaretSquareRight,
   faArrowAltCircleRight,
   faArrowAltCircleLeft,
-  faStar
+  faStar,
+  faTimes
 })
 
 Vue.component('fa-icon', FontAwesomeIcon)

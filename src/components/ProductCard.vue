@@ -1,5 +1,5 @@
 <template>
-  <div class="product">
+  <div class="product" @click="openProductDetailsModal">
     <img :src="product.url" :alt="product.name" class="image pa-2" />
     <div class="info py-2 px-6">
       <p class="name">{{ product.name }}</p>
@@ -33,6 +33,12 @@ export default {
     shortDescription(description) {
       if (description.length <= 60) return description
       return description.substring(0, 60) + '...'
+    },
+    openProductDetailsModal() {
+      this.$store.commit('toggleProductDetailsModal', {
+        show: true,
+        product: this.product
+      })
     }
   }
 }
@@ -50,6 +56,7 @@ export default {
   align-items: flex-start;
   border: 2px solid transparent;
   transition: all 0.2s ease;
+  cursor: pointer;
 
   &:hover {
     // border-color: #ffdb1142;

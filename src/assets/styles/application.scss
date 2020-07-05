@@ -17,6 +17,10 @@ body {
   background-color: $page-bg;
   color: rgb(68, 68, 68);
   overflow-x: hidden;
+
+  &.modal-visible {
+    overflow: hidden;
+  }
 }
 
 .btn {
@@ -27,6 +31,10 @@ body {
   border-radius: 0px;
   font-family: inherit;
   border-radius: 3px;
+
+  &:active {
+    transform: scale(0.9);
+  }
 
   &.light {
     background-color: $color-primary;
