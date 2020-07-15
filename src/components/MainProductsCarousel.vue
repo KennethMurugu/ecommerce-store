@@ -1,6 +1,6 @@
 <template>
   <div class="featured-products-carousel-container">
-    <div class="carousel" ref="carousel">
+    <!-- <div class="carousel" ref="carousel">
       <div
         class="product-container pa-12"
         v-for="(product, index) in featuredProducts"
@@ -31,7 +31,30 @@
       <span @click="next" class="carousel-btn next">
         <fa-icon icon="caret-square-right" class="fa-3x icon"></fa-icon>
       </span>
-    </div>
+    </div>-->
+    <Flickity
+      class="carousel"
+      ref="carousel"
+      :options="carouselOptions"
+      @init="initCarouselOptions"
+    >
+      <div class="product-info">
+        <h1 class="title">{{ currentSlideProduct.title }}</h1>
+        <p class="description">{{ currentSlideProduct.description }}</p>
+
+        <button class="btn light">
+          <fa-icon icon="shopping-cart" class="mr-3"></fa-icon>Buy Now
+        </button>
+      </div>
+      <div
+        v-for="(product, index) in featuredProducts"
+        :key="index"
+        class="carousel-cell"
+        :style="`background-image: url(${productImages[index]})`"
+      >
+        <!-- <img class="product-img" :src="productImages[index]" alt /> -->
+      </div>
+    </Flickity>
   </div>
 </template>
 
@@ -41,10 +64,19 @@ import product2Img from '../assets/img/main-product-2.png'
 import product3Img from '../assets/img/main-product-3.png'
 import product4Img from '../assets/img/main-product-4.png'
 import product5Img from '../assets/img/main-product-5.png'
+
+import Flickity from 'vue-flickity'
 export default {
   name: 'MainProductsCarousel',
+  components: { Flickity },
   data() {
     return {
+      carouselOptions: {
+        // autoPlay: true
+        setGallerySize: false,
+        cellSelector: '.carousel-cell',
+        wrapAround: true
+      },
       productImages: [
         product1Img,
         product2Img,
@@ -52,6 +84,7 @@ export default {
         product4Img,
         product5Img
       ],
+      currentProductIndex: 0,
       featuredProducts: [
         {
           title: 'Surface Studio 2  ',
@@ -81,54 +114,18 @@ export default {
       ]
     }
   },
+  computed: {
+    currentSlideProduct() {
+      return this.featuredProducts[this.currentProductIndex]
+    }
+  },
+  mounted() {},
   methods: {
-    next() {
-      let current = this.$refs.carousel.querySelector('.current')
-      let next = this.$refs.carousel.querySelector('.next')
-      let prev = this.$refs.carousel.querySelector('.prev')
-      let next2 = this.$refs.carousel.querySelector('.next2')
-      let prev2 = this.$refs.carousel.querySelector('.prev2')
-
-      // document.querySelector('.current').classList.ad
-
-      current.classList.remove('current')
-      current.classList.add('prev')
-
-      next.classList.remove('next')
-      next.classList.add('current')
-
-      next2.classList.remove('next2')
-      next2.classList.add('next')
-
-      prev2.classList.remove('prev2')
-      prev2.classList.add('next2')
-
-      prev.classList.remove('prev')
-      prev.classList.add('prev2')
-    },
-    prev() {
-      let current = this.$refs.carousel.querySelector('.current')
-      let next = this.$refs.carousel.querySelector('.next')
-      let prev = this.$refs.carousel.querySelector('.prev')
-      let next2 = this.$refs.carousel.querySelector('.next2')
-      let prev2 = this.$refs.carousel.querySelector('.prev2')
-
-      // document.querySelector('.current').classList.ad
-
-      current.classList.remove('current')
-      current.classList.add('next')
-
-      next.classList.remove('next')
-      next.classList.add('next2')
-
-      next2.classList.remove('next2')
-      next2.classList.add('prev2')
-
-      prev2.classList.remove('prev2')
-      prev2.classList.add('prev')
-
-      prev.classList.remove('prev')
-      prev.classList.add('current')
+    initCarouselOptions() {
+      this.$refs.carousel.on('change', index => {
+        // console.log('Changed to ' + index)
+        this.currentProductIndex = index
+      })
     }
   }
 }
@@ -136,122 +133,27 @@ export default {
 
 <style lang="scss" scoped>
 .carousel {
+  height: 500px;
   position: relative;
-  height: 600px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  overflow-x: hidden;
 }
-.product-container {
-  width: 80%;
-  //   max-width: 1000px;
-  position: absolute;
-  height: 550px;
+.carousel-cell {
+  width: 100%;
+  height: 100%;
   background-position: center;
   background-size: cover;
-  border-radius: 5px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  left: 50%;
-  transform: translateX(-50%);
-  transition: all 1s ease;
-
-  &.prev2 {
-    transform: translateX(-254%);
-  }
-  &.prev {
-    transform: translateX(-152%);
-  }
-  &.current {
-    transform: translateX(-50%);
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.397);
-  }
-  &.next {
-    transform: translateX(52%);
-  }
-  &.next2 {
-    transform: translateX(154%);
-  }
-
-  &.prev2,
-  &.next2 {
-    transition: none;
-    visibility: hidden;
-  }
 }
-
+.product-img {
+  width: 100%;
+}
 .product-info {
-  color: #fff;
-  background-color: rgba(107, 107, 107, 0.199);
-  backdrop-filter: blur(10px);
-  max-width: 300px;
-  margin-left: 2rem;
-}
-
-.product-container:not(.current) {
-  filter: grayscale(85%);
-  .product-info {
-    // visibility: hidden;
-    display: none;
-  }
-}
-
-.carousel-btn {
-  color: #fff;
-  z-index: 999;
-  cursor: pointer;
   position: absolute;
-
-  .icon {
-    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.35));
-    color: #fff;
-    transition: all 0.2s ease;
-
-    &:hover {
-      color: rgb(34, 34, 34);
-    }
-  }
-
-  &.prev {
-    left: 12%;
-    top: 50%;
-  }
-  &.next {
-    right: 12%;
-    top: 50%;
-  }
-}
-
-@keyframes enterNext {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(55%);
-  }
-}
-@keyframes enterPrev {
-  from {
-    transform: translateX(-200%);
-  }
-  to {
-    transform: translateX(-155%);
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .carousel {
-    height: 400px;
-  }
-  .product-container {
-    height: 350px;
-  }
-}
-@media screen and (max-width: 560px) {
-  .product-info {
-    margin: 0 1rem;
-  }
+  left: 10px;
+  top: 10px;
+  background-color: rgba(11, 11, 11, 0.4);
+  z-index: 9999;
+  padding: 1rem;
+  color: #fff;
+  box-shadow: 0px 8px 15px -8px #0000006e;
+  border-radius: 3px;
 }
 </style>
