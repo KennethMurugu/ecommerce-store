@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <MainProductsCarousel class="mb-12" />
+    <MainProductsCarousel class="mt-6 mb-12" />
 
     <DealsOfTheDay class="mb-12" />
 
@@ -15,8 +15,6 @@
       title="Popular Products"
       class="mb-12"
     />
-
-    <PageFooter />
   </div>
 </template>
 
@@ -24,15 +22,13 @@
 import MainProductsCarousel from '../components/MainProductsCarousel'
 import ProductListCarousel from '../components/ProductListCarousel'
 import DealsOfTheDay from '../components/DealsOfTheDay'
-import PageFooter from '../components/PageFooter'
 
 export default {
   name: 'Home',
   components: {
     MainProductsCarousel,
     ProductListCarousel,
-    DealsOfTheDay,
-    PageFooter
+    DealsOfTheDay
   },
   data() {
     return {
@@ -172,3 +168,10 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.home {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+</style>

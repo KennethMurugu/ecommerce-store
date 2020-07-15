@@ -142,8 +142,5 @@ export default {
     width: 95%;
     transform: translateX(-50%);
   }
-  .carousel-cell {
-    // background-position: 100%;
-  }
 }
 </style>
