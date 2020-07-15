@@ -1,37 +1,5 @@
 <template>
   <div class="featured-products-carousel-container">
-    <!-- <div class="carousel" ref="carousel">
-      <div
-        class="product-container pa-12"
-        v-for="(product, index) in featuredProducts"
-        :key="index"
-        :style="`background-image: url(${productImages[index]})`"
-        :class="{
-          current: index == 0,
-          next: index == 1,
-          next2: index == 2,
-          prev2: index == 3,
-          prev: index == 4
-        }"
-      >
-        <div class="product-info pa-6">
-          <h1 class="title">{{ product.title }}</h1>
-          <p class="description">{{ product.description }}</p>
-
-          <button class="btn light">
-            <fa-icon icon="shopping-cart" class="mr-3"></fa-icon>Buy Now
-          </button>
-        </div>
-      </div>
-
-      <span @click="prev" class="carousel-btn prev">
-        <fa-icon icon="caret-square-left" class="fa-3x icon"></fa-icon>
-      </span>
-
-      <span @click="next" class="carousel-btn next">
-        <fa-icon icon="caret-square-right" class="fa-3x icon"></fa-icon>
-      </span>
-    </div>-->
     <Flickity
       class="carousel"
       ref="carousel"
@@ -72,7 +40,7 @@ export default {
   data() {
     return {
       carouselOptions: {
-        // autoPlay: true
+        autoPlay: true,
         setGallerySize: false,
         cellSelector: '.carousel-cell',
         wrapAround: true

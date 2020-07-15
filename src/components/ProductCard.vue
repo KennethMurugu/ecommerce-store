@@ -51,7 +51,7 @@ export default {
 <style lang="scss" scoped>
 .product {
   background-color: #fff;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.215);
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
   overflow: hidden;
   color: #444444;
@@ -64,14 +64,8 @@ export default {
 
   &:hover {
     // border-color: #ffdb1142;
-    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.35);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
   }
-
-  // .image {
-  //   width: 100%;
-  //   max-height: 200px;
-  //   align-self: center;
-  // }
   .product-img-container {
     text-align: center;
     width: 100%;

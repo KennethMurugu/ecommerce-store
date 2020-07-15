@@ -1,6 +1,6 @@
 <template>
-  <div class="deals-of-the-day pa-3">
-    <div class="title">
+  <div class="deals-of-the-day">
+    <div class="title px-3">
       <h1>
         <fa-icon class="mr-3" icon="star"></fa-icon>Deals of the Day
         <fa-icon class="ml-3" icon="star"></fa-icon>

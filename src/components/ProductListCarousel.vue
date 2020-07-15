@@ -1,6 +1,6 @@
 <template>
-  <div class="product-list-carousel mx-auto px-3">
-    <div class="header" v-if="title">
+  <div class="product-list-carousel px-3">
+    <!-- <div class="header" v-if="title">
       <h2 class="title">{{ title }}</h2>
       <div class="action-btns" v-if="scrollable">
         <span @click="prev" class="carousel-btn prev mr-3">
@@ -12,14 +12,6 @@
         </span>
       </div>
     </div>
-    <!-- <transition-group
-      tag="div"
-      class="product-list"
-      name="product-list"
-      :style="`grid-template-columns: repeat(${numtoshow}, 1fr);`"
-    >
-      <ProductCard v-for="(product, index) in productsSlice" :key="index + 1" :product="product" />
-    </transition-group>-->
     <div
       class="product-list"
       :style="`grid-template-columns: repeat(${numtoshow}, 1fr);`"
@@ -29,16 +21,26 @@
         :key="index + 1"
         :product="product"
       />
-    </div>
+    </div>-->
+    <h2 class="title">{{ title }}</h2>
+    <Flickity class="carousel" :options="carouselOptions">
+      <ProductCard
+        v-for="(product, index) in products"
+        :key="index + 1"
+        :product="product"
+        class="carousel-cell"
+      />
+    </Flickity>
   </div>
 </template>
 
 <script>
 import ProductCard from '../components/ProductCard'
+import Flickity from 'vue-flickity'
 
 export default {
   name: 'ProductListCarousel',
-  components: { ProductCard },
+  components: { ProductCard, Flickity },
   props: {
     products: {
       type: Array,
@@ -73,7 +75,16 @@ export default {
   data() {
     return {
       currentIndex: 0,
-      numtoshow: 5
+      numtoshow: 5,
+      carouselOptions: {
+        setGallerySize: false,
+        cellSelector: '.carousel-cell',
+        // wrapAround: true,
+        pageDots: false,
+        cellAlign: 'left',
+        groupCells: true,
+        freeScroll: true
+      }
     }
   },
   methods: {
@@ -90,37 +101,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.product-list-carousel {
-  max-width: 1200px;
-
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .action-btns {
-      font-size: 1.5rem;
-      color: lighten($color-secondary, 10%);
-      .carousel-btn .icon {
-        cursor: pointer;
-        filter: drop-shadow(0px 3px 2px rgba(0, 0, 0, 0.11));
-        transition: all 0.2s ease;
-
-        &:hover {
-          color: $color-primary;
-        }
-      }
-    }
-  }
+.carousel {
+  width: 100%;
+  height: 420px;
 }
-
-.product-list {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  column-gap: 1rem;
-}
-
-.product-list-move {
-  transition: transform 1s;
+.carousel-cell {
+  width: 200px;
+  margin: 0 10px;
 }
 </style>
