@@ -1,5 +1,5 @@
 <template>
-  <div class="deals-of-the-day">
+  <div class="deals-of-the-day py-3">
     <div class="title px-3">
       <h1>
         <fa-icon class="deal-star" icon="star"></fa-icon>
