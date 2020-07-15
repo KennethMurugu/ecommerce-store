@@ -2,8 +2,9 @@
   <div class="deals-of-the-day">
     <div class="title px-3">
       <h1>
-        <fa-icon class="mr-3" icon="star"></fa-icon>Deals of the Day
-        <fa-icon class="ml-3" icon="star"></fa-icon>
+        <fa-icon class="deal-star" icon="star"></fa-icon>
+        <p class="my-1">Deals of the Day</p>
+        <fa-icon class="deal-star" icon="star"></fa-icon>
       </h1>
     </div>
     <ProductListCarousel :products="dealProducts" :scrollable="false" />
@@ -58,8 +59,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.title {
+  text-align: center;
+}
 .deals-of-the-day {
-  height: 450px;
+  // height: 450px;
   background-image: url('../assets/img/bg-deals-of-the-day.png');
   background-size: cover;
   background-position: center;
@@ -79,10 +83,7 @@ export default {
 @media screen and (max-width: 500px) {
   .deals-of-the-day {
     grid-template-columns: auto;
-    height: 550px;
-  }
-  .title {
-    text-align: center;
+    // height: 550px;
   }
 }
 </style>

@@ -19,9 +19,7 @@
         :key="index"
         class="carousel-cell"
         :style="`background-image: url(${productImages[index]})`"
-      >
-        <!-- <img class="product-img" :src="productImages[index]" alt /> -->
-      </div>
+      ></div>
     </Flickity>
   </div>
 </template>
@@ -115,13 +113,37 @@ export default {
 }
 .product-info {
   position: absolute;
-  left: 10px;
-  top: 10px;
   background-color: rgba(11, 11, 11, 0.4);
   z-index: 9999;
   padding: 1rem;
   color: #fff;
   box-shadow: 0px 8px 15px -8px #0000006e;
   border-radius: 3px;
+}
+
+@media screen and (min-width: 601px) {
+  .product-info {
+    left: 10px;
+    bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .product-info {
+    left: 20px;
+    bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .product-info {
+    left: 50%;
+    bottom: 10px;
+    width: 95%;
+    transform: translateX(-50%);
+  }
+  .carousel-cell {
+    // background-position: 100%;
+  }
 }
 </style>

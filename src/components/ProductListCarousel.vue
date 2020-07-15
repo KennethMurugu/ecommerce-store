@@ -1,5 +1,5 @@
 <template>
-  <div class="product-list-carousel px-3">
+  <div class="product-list-carousel">
     <!-- <div class="header" v-if="title">
       <h2 class="title">{{ title }}</h2>
       <div class="action-btns" v-if="scrollable">
@@ -22,7 +22,7 @@
         :product="product"
       />
     </div>-->
-    <h2 class="title">{{ title }}</h2>
+    <h2 class="title px-3" v-if="title">{{ title }}</h2>
     <Flickity class="carousel" :options="carouselOptions">
       <ProductCard
         v-for="(product, index) in products"
@@ -103,7 +103,7 @@ export default {
 <style lang="scss" scoped>
 .carousel {
   width: 100%;
-  height: 420px;
+  height: 430px;
 }
 .carousel-cell {
   width: 200px;

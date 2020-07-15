@@ -1,7 +1,7 @@
 <template>
   <div class="footer py-6 px-12">
     <div>
-      <h1>Shopio</h1>
+      <h1 class="app-name-logo">Shopio</h1>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
     </div>
     <div>
@@ -73,7 +73,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .footer {
     grid-template-columns: 1fr;
   }

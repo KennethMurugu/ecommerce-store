@@ -2,7 +2,7 @@
   <div class="page-header py-6">
     <div class="app-name-container mr-3">
       <fa-icon icon="bars" class="fa-lg mr-6 side-nav-toggle"></fa-icon>
-      <h1 class="app-name my-0">Shopio</h1>
+      <h1 class="app-name-logo my-0">Shopio</h1>
     </div>
     <div class="search-container mx-3 px-6">
       <input
